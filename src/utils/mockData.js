@@ -1,45 +1,3 @@
-import React from "react";0
-
-import ReactDOM from "react-dom/client";
-
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img className = "logo" src = "https://videos.openai.com/vg-assets/assets%2Ftask_01k0a7sa20f289xeyv86zc483q%2F1752690475_img_1.webp?st=2025-07-16T17%3A27%3A53Z&se=2025-07-22T18%3A27%3A53Z&sks=b&skt=2025-07-16T17%3A27%3A53Z&ske=2025-07-22T18%3A27%3A53Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=M%2Fq1LTrSMloESb8dYJ6P8wNGZ2VHXrEdvDhFDDYJKxA%3D&az=oaivgprodscus" /> 
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  )
-}
-
-const RestaurentCard = ({ resData }) => {
-  return (
-    <div className="res-card">
-      <img
-        className="res-logo"
-        alt="res-logo"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          resData.cloudinaryImageId
-        }
-      />
-      <h3>{resData.name}</h3>
-      <h4>{resData.cuisines.join(", ")}</h4>
-      <h4>{resData.costForTwo}</h4>
-      <h4>{resData.sla.deliveryTime} mins</h4>
-    </div>
-  );
-};
-
-
 const resList = [
 {
   "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
@@ -51,7 +9,7 @@ const resList = [
     areaName: "Chandni Chowk",
     costForTwo: "₹400 for two",
     cuisines: ["American", "Fast Food"],
-    avgRating: 4.3,
+    avgRating: 3.8,
     parentId: "630",
     avgRatingString: "4.3",
     totalRatingsString: "213",
@@ -63,57 +21,7 @@ const resList = [
       lastMileTravelString: "1.3 km",
       iconType: "ICON_TYPE_EMPTY"
     },
-    availability: {
-      nextCloseTime: "2025-07-19 23:00:00",
-      opened: true
-    },
-    badges: {},
-    isOpen: true,
-    type: "F",
-    badgesV2: {
-      entityBadges: {
-        imageBased: {},
-        textBased: {},
-        textExtendedBadges: {}
-      }
-    },
-    aggregatedDiscountInfoV3: {
-      header: "ITEMS",
-      subHeader: "AT ₹39"
-    },
-    orderabilityCommunication: {
-      title: {},
-      subTitle: {},
-      message: {},
-      customIcon: {}
-    },
-    differentiatedUi: {
-      displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-      differentiatedUiMediaDetails: {
-        mediaType: "ADS_MEDIA_ENUM_IMAGE",
-        lottie: {},
-        video: {}
-      }
-    },
-    reviewsSummary: {},
-    displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-    restaurantOfferPresentationInfo: {},
-    externalRatings: {
-      aggregatedRating: {
-        rating: "--"
-      }
-    },
-    ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
   },
-  analytics: {
-    context: "seo-data-611f9070-9e28-47b1-92dc-0cdb7edbfadb"
-  },
-  cta: {
-    link: "https://www.swiggy.com/city/delhi/mcdonalds-omaxe-mall-chandni-chowk-rest967051",
-    text: "RESTAURANT_MENU",
-    type: "WEBLINK"
-  },
-  widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
 },
 {
   "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
@@ -125,7 +33,7 @@ const resList = [
     areaName: "Chandni Chowk",
     costForTwo: "₹400 for two",
     cuisines: ["Burgers", "Rolls & Wraps", "Fast Food"],
-    avgRating: 4.2,
+    avgRating: 4.8,
     parentId: "547",
     avgRatingString: "4.2",
     totalRatingsString: "111",
@@ -627,33 +535,4 @@ const resList = [
 }
 ];
 
-
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        { resList.map((restaurant) => (
-          <RestaurentCard key={restaurant.info.id} resData={restaurant.info}
-          />
-        )) }
-      </div>
-    </div>
-  );
-};
-
-
-
-const AppLayout = () => {
-  return (
-    <div className = "app">
-      <Header/>
-      <Body/>
-    </div>
-  )
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"))
-
-
-root.render(<AppLayout />)
+export default  resList;
