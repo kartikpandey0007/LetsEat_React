@@ -21,7 +21,7 @@ const resList = [
       lastMileTravelString: "1.3 km",
       iconType: "ICON_TYPE_EMPTY"
     },
-  },
+  }
 },
 {
   "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
@@ -103,15 +103,6 @@ const resList = [
     },
     ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
   },
-  analytics: {
-    context: "seo-data-611f9070-9e28-47b1-92dc-0cdb7edbfadb"
-  },
-  cta: {
-    link: "https://www.swiggy.com/city/delhi/kfc-kaccha-bagh-chandni-chowk-rest804724",
-    text: "RESTAURANT_MENU",
-    type: "WEBLINK"
-  },
-  widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
 },
 {
   "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
@@ -274,8 +265,7 @@ const resList = [
     "costForTwo": "₹250 for two",
     "cuisines": [
       "Mexican", "American", "Salads", "Continental",
-      "Keto", "Healthy Food", "Beverages", "Snacks",
-      "Desserts", "Fast Food"
+      "Keto"
     ],
     "avgRating": 4.5,
     "parentId": "432183",

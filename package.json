@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "My React",
   "scripts": {
-    "start" : "parcel index.html",
+    "start": "parcel index.html",
     "build": "parcel build index.html ",
     "test": "jest"
   },
@@ -21,10 +21,15 @@
   },
   "homepage": "https://github.com/kartikpandey0007/React_frontend#readme",
   "devDependencies": {
+    "concurrently": "^9.2.0",
     "parcel": "^2.15.4"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "node-fetch": "^2.7.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^6.22.3"
   }
 }
