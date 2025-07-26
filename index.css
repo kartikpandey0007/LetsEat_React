@@ -18,8 +18,8 @@ body {
 }
 
 .logo {
-  height: 80px;
-  width: 110px;
+  height: 95px;
+  width: 130px;
 }
 
 /* Nav */
@@ -231,11 +231,12 @@ body {
 
 /* Dish Image */
 .dish-img {
-  width: 100px;
-  height: 100px;
-  border-radius: 12px;
+  width: 140px;
+  height: 140px;
+  border-radius: 16px;
   object-fit: cover;
 }
+
 
 /* Dish Text */
 .dish-text {
@@ -267,4 +268,41 @@ body {
 .add-to-cart-btn:active {
   background-color: #3d0066;
   transform: scale(0.98);
+}
+
+
+.user-card h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.user-card h3,
+.user-card h4 {
+  font-size: 16px;
+  margin: 4px 0;
+  font-weight: 400;
+  color: #555;
+}
+
+
+
+.user-card {
+  width: 250px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* 🔥 This centers text and inline elements like img */
+  font-family: Arial, sans-serif;
+  margin: 20px auto;  /* Optional: center the whole card horizontally */
+}
+
+.user-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  margin-bottom: 1rem;
 }
