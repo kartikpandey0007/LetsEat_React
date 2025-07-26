@@ -1,24 +1,10 @@
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  //const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
-
-  const resInfo = useRestaurantMenu(resId)
-
-  
-  /*useEffect(() => {
-    (async () => {
-      const data = await fetch(
-        `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.65420&lng=77.23730&restaurantId=${resId}`
-      );
-      const json = await data.json();
-      setResInfo(json?.data);
-    })();
-  }, []);*/
+  const resInfo = useRestaurantMenu(resId);
 
   if (!resInfo) return <Shimmer />;
 
@@ -32,33 +18,40 @@ const RestaurantMenu = () => {
       ?.find((c) => c?.card?.card?.itemCards)?.card?.card?.itemCards;
 
   return (
-    <div className="menu">
-      <h1>{name}</h1>
-      <h3>{cuisines?.join(", ")}</h3>
-      <h3>{costForTwoMessage}</h3>
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-2 text-center">{name}</h1>
+      <h3 className="text-lg text-gray-600 text-center">{cuisines?.join(", ")}</h3>
+      <h3 className="text-md text-gray-500 text-center mb-6">{costForTwoMessage}</h3>
 
       {itemCards?.length > 0 ? (
-        <ul>
+        <ul className="space-y-6">
           {itemCards.map((item) => (
-            <li key={item.card.info.id} className="menu-item">
+            <li
+              key={item.card.info.id}
+              className="flex flex-col sm:flex-row items-center bg-white shadow-md rounded-xl p-4 gap-4 hover:scale-[1.02] transition-transform duration-300"
+            >
               <img
-                className="dish-img"
+                className="w-40 h-40 object-cover rounded-lg"
                 src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/${item.card.info.imageId}`}
                 alt={item.card.info.name}
               />
-              <div className="dish-text">
-                <strong>{item.card.info.name}</strong> - ₹
-                {(item.card.info.price || item.card.info.defaultPrice) / 100}
-                <p style={{ margin: "8px 0", fontSize: "0.9rem", color: "#666" }}>
+              <div className="flex-1">
+                <div className="text-xl font-semibold">{item.card.info.name}</div>
+                <div className="text-green-700 font-medium mt-1">₹
+                  {(item.card.info.price || item.card.info.defaultPrice) / 100}
+                </div>
+                <p className="text-sm text-gray-600 mt-2">
                   {item.card.info.description || "No description available."}
                 </p>
-                <button className="add-to-cart-btn">Add to Cart</button>
+                <button className="mt-3 px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors">
+                  Add to Cart
+                </button>
               </div>
             </li>
           ))}
         </ul>
       ) : (
-        <p>No menu available for this restaurant.</p>
+        <p className="text-center text-gray-500">No menu available for this restaurant.</p>
       )}
     </div>
   );

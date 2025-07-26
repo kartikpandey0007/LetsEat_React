@@ -21,8 +21,12 @@
   },
   "homepage": "https://github.com/kartikpandey0007/React_frontend#readme",
   "devDependencies": {
+    "@parcel/transformer-postcss": "^2.15.4",
+    "autoprefixer": "^10.4.21",
     "concurrently": "^9.2.0",
-    "parcel": "^2.15.4"
+    "parcel": "^2.15.4",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.14"
   },
   "dependencies": {
     "cors": "^2.8.5",
