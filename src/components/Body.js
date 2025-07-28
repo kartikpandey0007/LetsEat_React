@@ -1,12 +1,14 @@
-import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
+import { useState, useEffect,useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
   const [filteredRestaurnts, setFilteredRestaurants] = useState([]);
+
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
@@ -34,6 +36,8 @@ const Body = () => {
         🚫 Looks like you are offline
       </h1>
     );
+
+    const {loggedInUser,setUserInfo} = useContext(UserContext)// for reactcontext(fo globaly present variable change)
 
   if (listOfRestaurants.length === 0) {
     return <Shimmer />;
@@ -79,6 +83,13 @@ const Body = () => {
         >
           🌟 Top Rated Restaurants
         </button>
+
+        <div>
+          <label>UserName: </label>
+          <input className="border border-gray-300 rounded px-3 py-2 w-60 focus:outline-none focus:ring-2 focus:ring-pink-300" 
+          value={loggedInUser}
+          onChange={(e)=>{setUserInfo(e.target.value)}}></input>
+        </div>
       </div>
 
       {/* Restaurant List */}
