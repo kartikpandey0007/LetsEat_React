@@ -1,4 +1,19 @@
+import { useDispatch } from "react-redux";
+import { addItems } from "../utils/cartSlice";
+
 const ItemList = ({ data }) => {
+
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item)=>{
+    //dispacth an action
+    const action = addItems(item); 
+    dispatch(action);
+    //dispatch(addItems("pizza"))
+  }
+
+
+
   return (
     <div className="flex items-start justify-between gap-4 p-4 border-b">
       {/* left: Image */}
@@ -18,7 +33,8 @@ const ItemList = ({ data }) => {
           ₹{data.price ? data.price / 100 : data.defaultPrice / 100}
         </p>
 
-        <button className="mt-2 px-4 py-2 bg-black text-white text-sm font-medium rounded hover:bg-green-600 transition">
+        <button className="mt-2 px-4 py-2 bg-black text-white text-sm font-medium rounded hover:bg-green-600 transition"
+        onClick={() => handleAddItem(data)}>
           Let'sEat
         </button>
       </div>
