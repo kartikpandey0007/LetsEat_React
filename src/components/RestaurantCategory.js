@@ -25,7 +25,7 @@ const RestaurantCategory = ({ data,showItems, setShowIndex }) => {
       {showItems && (
         <div className="bg-white rounded-md shadow-sm">
           {data.itemCards.map((items) => (
-            <Itemlist key={items.card.info.id} data={items.card.info} />
+            <Itemlist key={`${items.card.info.id}-${Math.random()}`} data={items.card.info} />
           ))}
         </div>
       )}

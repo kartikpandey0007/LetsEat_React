@@ -1,6 +1,6 @@
 import { CDN_URL } from "../utils/constants";
 
-const RestaurantCard = ({ resData }) => {
+const                                                                                             RestaurantCard = ({ resData }) => {
   return (
     <div className="w-64 p-4 m-4 rounded-2xl bg-white shadow-md hover:scale-105 transition-transform duration-300">
       <img
@@ -17,15 +17,10 @@ const RestaurantCard = ({ resData }) => {
   );
 };
 
-
-export const withPromotedLabel = (RestaurantCard)=>{
-  return ()=>{
-    return(
-      <div>
-
-      </div>
-    )
-  }
-}
+export const withPromotedLabel = (RestaurantCard) => {
+  return () => {
+    return <div></div>;
+  };
+};
 
 export default RestaurantCard;
