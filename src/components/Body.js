@@ -44,12 +44,13 @@ const Body = () => {
   }
 
   return (
-    <div className="body px-4 md:px-10 lg:px-20 py-6">
+    <div className="body px-4 md:px-10 lg:px-20 py-6 bg-gradient-to-r from-pink-100 to-white">
       {/* Search & Filter Section */}
       <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mb-6">
         {/* Search */}
         <div className="flex gap-2">
           <input
+           data-testid= "searchInput"
             type="text"
             placeholder="Search restaurant"
             className="border border-gray-300 rounded px-3 py-2 w-60 focus:outline-none focus:ring-2 focus:ring-pink-300"

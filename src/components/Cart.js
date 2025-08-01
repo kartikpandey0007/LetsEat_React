@@ -14,7 +14,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4">
+    <div className="max-w-4xl mx-auto p-4 bg-gradient-to-r from-pink-100 to-white">
       <h1 className="text-2xl font-bold mb-4 text-center">🛒 Your Cart</h1>
 
       {cartItems.map((item, index) => (

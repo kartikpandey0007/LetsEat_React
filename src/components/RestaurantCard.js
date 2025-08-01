@@ -1,8 +1,9 @@
 import { CDN_URL } from "../utils/constants";
 
-const                                                                                             RestaurantCard = ({ resData }) => {
+const RestaurantCard = ({ resData }) => {
+  console.log(resData)
   return (
-    <div className="w-64 p-4 m-4 rounded-2xl bg-white shadow-md hover:scale-105 transition-transform duration-300">
+    <div data-testid = "resCard" className="w-64 p-4 m-4 rounded-2xl bg-white shadow-md hover:scale-105 transition-transform duration-300">
       <img
         className="w-full h-40 object-cover rounded-xl mb-2"
         alt="res-logo"
