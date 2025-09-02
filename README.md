@@ -61,6 +61,6 @@
 - Add **payment gateway integration** (Stripe/Razorpay) for complete ordering experience.
 
 ---
-## 📜 License
+## License
 
 This project is licensed under the **MIT License**.
